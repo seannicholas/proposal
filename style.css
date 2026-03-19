@@ -186,12 +186,7 @@ footer {
 }
 
 [data-mode="formal"] #hero {
-  background: linear-gradient(
-    160deg,
-    #0d1b2a 0%,
-    #1a2e40 60%,
-    #0d1b2a 100%
-  );
+  background: linear-gradient(160deg, #0d1b2a 0%, #1a2e40 60%, #0d1b2a 100%);
 }
 [data-mode="formal"] #hero .hero-text,
 [data-mode="formal"] #hero .hero-sub,
@@ -935,5 +930,149 @@ footer span {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ─── MOBILE ─── */
+
+/* Dynamic viewport height: fixes iOS browser-chrome eating into 100vh */
+@supports (height: 100dvh) {
+  #scroll-container {
+    height: 100dvh;
+  }
+  #hero,
+  #trade,
+  #standard,
+  #premium,
+  #risk,
+  #tnc,
+  #cta {
+    min-height: 100dvh;
+  }
+}
+
+/* Safe-area insets for notched/Dynamic Island devices */
+#toggle-bar {
+  top: max(1.2rem, env(safe-area-inset-top, 1.2rem));
+  right: max(1.5rem, env(safe-area-inset-right, 1.5rem));
+}
+
+#hero {
+  padding-top: max(6rem, calc(5rem + env(safe-area-inset-top, 0px)));
+}
+
+footer {
+  padding-bottom: max(2.5rem, env(safe-area-inset-bottom, 2.5rem));
+}
+
+@media (max-width: 600px) {
+  /* Toggle: hide text labels on narrow screens */
+  .toggle-label {
+    display: none;
+  }
+
+  /* Hero: tighter padding, lighter text stroke */
+  #hero {
+    padding: max(4.5rem, calc(3.5rem + env(safe-area-inset-top, 0px))) 1.25rem
+      3rem;
+  }
+
+  [data-mode="meme"] .hero-text {
+    -webkit-text-stroke: 1.5px var(--accent);
+  }
+
+  .hero-divider {
+    margin: 1.25rem auto;
+  }
+
+  .hero-sub {
+    margin-top: 1.25rem;
+  }
+
+  /* Hero meta: reduce letter-spacing so it wraps cleanly */
+  .hero-meta {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    line-height: 2;
+  }
+
+  /* Section base: tighter vertical padding */
+  section {
+    padding: 3rem 1.25rem;
+  }
+
+  .section-title {
+    margin-bottom: 1.75rem;
+  }
+
+  /* Inner wrappers (trade / premium / tnc) */
+  #trade > .inner,
+  #premium > .inner,
+  #tnc > .inner {
+    padding: 3rem 1.25rem;
+  }
+
+  /* Trade cards: tighter */
+  .trade-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .trade-card-head {
+    margin-bottom: 1rem;
+  }
+
+  /* Clause table: 2-col on mobile — hide description to avoid squeezing */
+  .clause-desc {
+    display: none;
+  }
+
+  .clause-name {
+    width: auto;
+    min-width: 0;
+  }
+
+  .clause-table td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  /* Benefits: force single column */
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  /* Risk table: smaller cell padding */
+  .risk-table th,
+  .risk-table td {
+    padding: 0.65rem 0.75rem;
+    font-size: 0.82rem;
+  }
+
+  /* T&C: tighter grid and padding */
+  .tnc-item {
+    grid-template-columns: 2.5rem 1fr;
+    gap: 0.75rem;
+    padding: 1rem 0;
+  }
+
+  /* CTA: reduce padding, full-width button */
+  #cta {
+    padding: 3rem 1.25rem;
+  }
+
+  .cta-btn {
+    width: 100%;
+    max-width: 340px;
+    padding: 1rem 2rem;
+    justify-content: center;
+    font-size: clamp(1.1rem, 5vw, 1.4rem);
+  }
+
+  /* Crown easter egg: smaller on phone */
+  #eggCrown {
+    font-size: 5rem;
   }
 }
