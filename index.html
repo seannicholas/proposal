@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en" data-mode="meme">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dinner Proposal — Sean Nicholas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&family=DM+Sans:wght@400;600&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- FIX 3: Easter egg elements are direct children of <body>, outside
+         the scroll container, so position:fixed is never clipped. -->
+    <div id="eggFlash"></div>
+    <div id="eggCrown">👑</div>
+
+    <!-- TOGGLE: position:fixed, works outside the scroll container -->
+    <div id="toggle-bar">
+      <span class="toggle-label" id="toggle-label-left">Meme</span>
+      <label class="toggle-switch" title="Switch mode">
+        <!-- FIX 2: input uses position:absolute + opacity:0 instead of
+             display:none so it can receive change events -->
+        <input type="checkbox" id="modeToggle" />
+        <div class="toggle-track"></div>
+        <div class="toggle-thumb"></div>
+      </label>
+      <span class="toggle-label" id="toggle-label-right">Formal</span>
+    </div>
+
+    <!-- FIX 1: All snap sections live inside this scroll container -->
+    <div id="scroll-container">
+
+      <!-- ── HERO ── -->
+      <section id="hero">
+        <div class="hero-eyebrow easter-target" id="easterEgg">
+          ⚠ Princess Eyes Only ⚠
+        </div>
+        <h1 class="hero-text fade-in">
+          Dinner with
+          <span class="hero-accent-word">Sean Nicholas</span>
+        </h1>
+        <div class="hero-divider fade-in"></div>
+        <p class="hero-sub fade-in" id="heroSub">
+          he said he'd send a proposal deck.<br />he actually built a whole
+          website.
+        </p>
+        <p class="hero-meta fade-in">
+          Prepared for <span>elliephantgator</span> &nbsp;·&nbsp; Version 1.0
+          &nbsp;·&nbsp; Classification: <span>Princess Eyes Only</span>
+        </p>
+        <div class="scroll-cue">
+          <span>Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- ── TRADE OFFER ── -->
+      <div id="trade">
+        <div class="inner">
+          <p class="section-label">Section 01</p>
+          <h2 class="section-title" id="tradeTitle">Trade Offer</h2>
+          <div class="trade-grid">
+            <div class="trade-card left">
+              <div class="trade-card-head" id="receiveLeft">I Receive:</div>
+              <div class="trade-item">
+                <span class="trade-icon">🤝</span
+                ><span>Your company at dinner</span>
+              </div>
+              <div class="trade-item">
+                <span class="trade-icon">✨</span><span>Good vibes only</span>
+              </div>
+              <div class="trade-item">
+                <span class="trade-icon">🎯</span><span>A fair shot</span>
+              </div>
+              <div class="trade-item">
+                <span class="trade-icon">👑</span
+                ><span>The privilege of your presence, your majesty</span>
+              </div>
+            </div>
+            <div class="trade-center">
+              <div class="trade-vs" id="tradeVs">🤝</div>
+            </div>
+            <div class="trade-card right">
+              <div class="trade-card-head" id="receiveRight">You Receive:</div>
+              <div class="trade-item">
+                <span class="trade-icon clause-check">✅</span
+                ><span>Pick up from your location</span>
+              </div>
+              <div class="trade-item">
+                <span class="trade-icon clause-check">✅</span
+                ><span>Dinner fully covered</span>
+              </div>
+              <div class="trade-item">
+                <span class="trade-icon clause-check">✅</span
+                ><span>He shows up dressed</span>
+              </div>
+              <div class="trade-item">
+                <span class="trade-icon clause-check">✅</span
+                ><span>Shits and giggles, guaranteed</span>
+              </div>
+              <div class="trade-item">
+                <span class="trade-icon clause-check">✅</span
+                ><span>Safe ride home</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PRINCESS TREATMENT CLAUSE ── -->
+      <section id="standard">
+        <p class="section-label">Section 02</p>
+        <h2 class="section-title">Princess Treatment Clause</h2>
+        <div class="clause-header">
+          <span class="clause-tag">§ 1.0</span>
+          <span class="clause-subtitle"
+            >Standard Package — Effective Immediately</span
+          >
+        </div>
+        <div class="risk-table-wrap">
+          <table class="clause-table">
+            <tbody>
+              <tr>
+                <td class="clause-num">1.1</td>
+                <td class="clause-name">
+                  <span class="clause-check">✅</span>Pick Up
+                </td>
+                <td class="clause-desc">
+                  Vendor will collect client from a mutually agreed location. On
+                  time.
+                </td>
+              </tr>
+              <tr>
+                <td class="clause-num">1.2</td>
+                <td class="clause-name">
+                  <span class="clause-check">✅</span>Dinner Fully Covered
+                </td>
+                <td class="clause-desc">
+                  All food and beverage expenses borne by vendor. No exceptions.
+                </td>
+              </tr>
+              <tr>
+                <td class="clause-num">1.3</td>
+                <td class="clause-name">
+                  <span class="clause-check">✅</span>Dressed for the Occasion
+                </td>
+                <td class="clause-desc">
+                  Vendor shall present himself appropriately. Standards will be
+                  upheld.
+                </td>
+              </tr>
+              <tr>
+                <td class="clause-num">1.4</td>
+                <td class="clause-name">
+                  <span class="clause-check">✅</span>Shits &amp; Giggles
+                </td>
+                <td class="clause-desc">
+                  Good conversation guaranteed. Awkward silence is a breach of
+                  contract.
+                </td>
+              </tr>
+              <tr>
+                <td class="clause-num">1.5</td>
+                <td class="clause-name">
+                  <span class="clause-check">✅</span>Safe Return Home
+                </td>
+                <td class="clause-desc">
+                  Client will be sent home safely at the end of the evening.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ── PREMIUM BENEFITS ── -->
+      <div id="premium">
+        <div class="inner">
+          <p class="section-label">Section 03</p>
+          <h2 class="section-title" id="premiumTitle">Premium Benefits</h2>
+          <div class="clause-header">
+            <span class="clause-tag">§ 2.0</span>
+            <span class="clause-subtitle"
+              >Unlocked Over Time — Based on Cooperation &amp; Good Vibes</span
+            >
+          </div>
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <div class="benefit-lock">🔒 Premium</div>
+              <span class="benefit-emoji">🎟️</span>
+              <div class="benefit-title">Plus-One Privileges</div>
+              <p class="benefit-desc">
+                Client granted priority access as vendor's plus-one to selected
+                events, dinners, and occasions. Client will not go alone.
+              </p>
+              <p class="benefit-clause">§ 2.1 — Access Tier</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-lock">🔒 Premium</div>
+              <span class="benefit-emoji">🐷</span>
+              <div class="benefit-title">Piggyback Services</div>
+              <p class="benefit-desc">
+                Upon verbal or non-verbal indication of fatigue, vendor shall
+                provide carry services. Session ends only upon client's
+                satisfaction.
+              </p>
+              <p class="benefit-clause">§ 2.2 — Logistics Tier</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-lock">🔒 Premium</div>
+              <span class="benefit-emoji">📸</span>
+              <div class="benefit-title">Designated Fit Photographer</div>
+              <p class="benefit-desc">
+                On-demand photography services. Unlimited shots per session.
+                Session concludes only upon client's formal approval.
+              </p>
+              <p class="benefit-clause">§ 2.3 — Creative Tier</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── RISK ASSESSMENT ── -->
+      <section id="risk">
+        <p class="section-label">Section 04</p>
+        <h2 class="section-title">Risk Assessment</h2>
+        <div class="risk-table-wrap">
+          <table class="risk-table">
+            <thead>
+              <tr>
+                <th>Risk Factor</th>
+                <th>Probability</th>
+                <th>Mitigation</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>You have a bad time</td>
+                <td>~0%</td>
+                <td>Vendor has planned accordingly</td>
+                <td class="risk-status-good">✅ Controlled</td>
+              </tr>
+              <tr>
+                <td>Awkward silence</td>
+                <td>Low</td>
+                <td>Good conversation + music exists</td>
+                <td class="risk-status-good">✅ Mitigated</td>
+              </tr>
+              <tr>
+                <td>Hidden agenda</td>
+                <td>None</td>
+                <td>Intentions stated upfront. On record.</td>
+                <td class="risk-status-good">✅ Cleared</td>
+              </tr>
+              <tr>
+                <td>Vendor ghosts after</td>
+                <td>Zero</td>
+                <td>Refer to "best regards, Sean Nicholas"</td>
+                <td class="risk-status-good">✅ Eliminated</td>
+              </tr>
+              <tr>
+                <td>You enjoy yourself</td>
+                <td>Very High</td>
+                <td>Expected outcome, not an accident</td>
+                <td class="risk-status-great">📈 Projected</td>
+              </tr>
+              <tr>
+                <td>You want to go again</td>
+                <td>High</td>
+                <td>Vendor is prepared for this</td>
+                <td class="risk-status-great">📈 On Track</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ── TERMS & CONDITIONS ── -->
+      <div id="tnc">
+        <div class="inner">
+          <p class="section-label">Section 05</p>
+          <h2 class="section-title">Terms &amp; Conditions</h2>
+          <div class="tnc-list">
+            <div class="tnc-item">
+              <span class="tnc-num">T1</span>
+              <span class="tnc-text"
+                >This proposal is valid indefinitely. There is no expiry on being
+                treated well.</span
+              >
+            </div>
+            <div class="tnc-item">
+              <span class="tnc-num">T2</span>
+              <span class="tnc-text"
+                >All standard package deliverables are non-negotiable. Premium
+                benefits are earned progressively.</span
+              >
+            </div>
+            <div class="tnc-item">
+              <span class="tnc-num">T3</span>
+              <span class="tnc-text"
+                >Vendor reserves the right to be himself. Client should expect
+                authenticity, not performance.</span
+              >
+            </div>
+            <div class="tnc-item">
+              <span class="tnc-num">T4</span>
+              <span class="tnc-text"
+                >Proposal is non-transferable. This offer is exclusive to
+                elliephantgator.</span
+              >
+            </div>
+            <div class="tnc-item">
+              <span class="tnc-num">T5</span>
+              <span class="tnc-text"
+                >No formal reply template required. A simple "yes" will suffice
+                and be accepted with enthusiasm.</span
+              >
+            </div>
+            <div class="tnc-item">
+              <span class="tnc-num">T6</span>
+              <span class="tnc-text"
+                >Governing principle: good vibes only. All engagements to be
+                conducted in the spirit of mutual respect.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── CTA ── -->
+      <section id="cta">
+        <p class="section-label">Final Clause</p>
+        <h2 class="cta-head" id="ctaHead">So…<br />do we have a deal?</h2>
+        <p class="cta-sub" id="ctaSub">
+          Awaiting your formal approval, your majesty.
+        </p>
+        <a
+          class="cta-btn"
+          href="https://t.me/seannicho"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>👑</span>
+          <span id="ctaBtnText">I Approve This Proposal</span>
+        </a>
+        <p class="cta-note">
+          Reply options: <span>yes</span> &nbsp;|&nbsp; <span>also yes</span>
+        </p>
+      </section>
+
+      <!-- ── FOOTER ── -->
+      <footer>
+        <span>best regards, Sean Nicholas</span> &nbsp;·&nbsp; seansidequests
+        &nbsp;·&nbsp; <span>Princess Eyes Only</span>
+      </footer>
+
+    </div><!-- /#scroll-container -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
