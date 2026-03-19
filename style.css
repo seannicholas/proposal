@@ -54,7 +54,6 @@
   padding: 0;
 }
 
-/* FIX 1: html overflow hidden for scroll snap container */
 html {
   height: 100%;
   overflow: hidden;
@@ -68,10 +67,18 @@ body {
     background var(--transition),
     color var(--transition);
   height: 100%;
-  /* overflow-x: hidden removed — scroll container handles overflow */
 }
 
-/* ─── FIX 1: SCROLL SNAP CONTAINER ─── */
+/* ─── ICONS ─── */
+.icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: -0.125em;
+  flex-shrink: 0;
+}
+
+/* ─── SCROLL SNAP CONTAINER ─── */
 #scroll-container {
   height: 100vh;
   overflow-y: scroll;
@@ -123,7 +130,6 @@ footer {
   cursor: pointer;
 }
 
-/* FIX 2: was display: none — replaced so input receives events */
 .toggle-switch input {
   position: absolute;
   opacity: 0;
@@ -170,7 +176,6 @@ footer {
   overflow: hidden;
 }
 
-/* meme hero scanline overlay */
 [data-mode="meme"] #hero::before {
   content: "";
   position: absolute;
@@ -195,7 +200,9 @@ footer {
 }
 
 .hero-eyebrow {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-family: var(--font-body);
   font-size: 0.7rem;
   font-weight: 600;
@@ -206,7 +213,7 @@ footer {
   color: var(--accent);
   margin-bottom: 1.5rem;
   transition: all var(--transition);
-  cursor: pointer; /* FIX 3: was cursor: default */
+  cursor: pointer;
 }
 
 [data-mode="meme"] .hero-eyebrow {
@@ -377,6 +384,23 @@ section {
   font-style: italic;
 }
 
+/* Section description — sits below title */
+.section-desc {
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 640px;
+  margin-top: -1.75rem;
+  margin-bottom: 2.5rem;
+  transition: color var(--transition);
+}
+
+[data-mode="formal"] .section-desc {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
 /* ─── TRADE OFFER ─── */
 #trade {
   background: var(--bg-alt);
@@ -393,15 +417,6 @@ section {
   grid-template-columns: 1fr auto 1fr;
   gap: 2rem;
   align-items: start;
-}
-
-@media (max-width: 680px) {
-  .trade-grid {
-    grid-template-columns: 1fr;
-  }
-  .trade-center {
-    display: none;
-  }
 }
 
 .trade-card {
@@ -458,9 +473,10 @@ section {
 }
 
 .trade-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.15rem;
   flex-shrink: 0;
-  font-size: 1.1rem;
-  margin-top: 0.1rem;
 }
 
 .trade-center {
@@ -485,6 +501,36 @@ section {
     background var(--transition),
     color var(--transition);
   flex-shrink: 0;
+}
+
+.trade-vs .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* Mobile trade: show VS between stacked cards as a connector */
+@media (max-width: 680px) {
+  .trade-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .trade-center {
+    display: flex;
+    padding: 1rem 0;
+    justify-content: center;
+  }
+
+  .trade-vs {
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+  }
+
+  .trade-vs .icon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
 }
 
 /* ─── PRINCESS TREATMENT ─── */
@@ -570,7 +616,8 @@ section {
 
 .clause-check {
   color: #4caf50;
-  margin-right: 0.4rem;
+  margin-right: 0.3rem;
+  vertical-align: -0.125em;
 }
 
 .clause-desc {
@@ -625,10 +672,13 @@ section {
   margin-bottom: 1.25rem;
 }
 
-.benefit-emoji {
-  font-size: 2.5rem;
+.benefit-icon {
+  width: 2.5rem;
+  height: 2.5rem;
   margin-bottom: 1rem;
+  color: var(--accent);
   display: block;
+  transition: color var(--transition);
 }
 
 .benefit-title {
@@ -660,58 +710,94 @@ section {
   margin-top: 1.25rem;
 }
 
-/* ─── RISK ASSESSMENT ─── */
-.risk-table-wrap {
-  overflow-x: auto;
+/* ─── RISK ASSESSMENT (list layout) ─── */
+.risk-list {
+  display: flex;
+  flex-direction: column;
 }
 
-.risk-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 560px;
-}
-
-.risk-table th {
-  font-family: var(--font-head);
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  text-align: left;
-  padding: 0.85rem 1rem;
-  background: var(--accent2);
-  color: #fff;
-  letter-spacing: 0.05em;
-  transition:
-    font-family var(--transition),
-    background var(--transition);
-}
-
-[data-mode="formal"] .risk-table th {
-  background: #0d1b2a;
-  color: #c9a84c;
-}
-
-.risk-table td {
-  padding: 0.9rem 1rem;
+.risk-item {
+  display: grid;
+  grid-template-columns: 3rem 1fr auto;
+  gap: 1.25rem;
+  padding: 1.5rem 0;
   border-bottom: 1px solid var(--border);
-  font-size: clamp(0.85rem, 1.7vw, 0.98rem);
-  line-height: 1.5;
+  align-items: center;
   transition: border-color var(--transition);
 }
 
-.risk-table tr:nth-child(even) td {
-  background: rgba(255, 255, 255, 0.02);
-}
-[data-mode="formal"] .risk-table tr:nth-child(even) td {
-  background: rgba(0, 0, 0, 0.02);
+.risk-item:last-child {
+  border-bottom: none;
 }
 
-.risk-status-good {
-  color: #4caf50;
-  font-weight: 600;
+.risk-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.risk-status-great {
+
+.risk-item-icon .icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.risk-item-icon.good .icon {
+  color: #4caf50;
+}
+
+.risk-item-icon.great .icon {
   color: var(--accent);
-  font-weight: 600;
   transition: color var(--transition);
+}
+
+.risk-factor {
+  font-weight: 600;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: var(--text);
+  transition: color var(--transition);
+}
+
+.risk-prob {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0.25rem 0;
+  transition: color var(--transition);
+}
+
+.risk-mitigation {
+  font-size: clamp(0.85rem, 1.7vw, 0.95rem);
+  color: var(--text-muted);
+  line-height: 1.5;
+  transition: color var(--transition);
+}
+
+.risk-status {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0.35rem 0.75rem;
+  border-radius: 2px;
+}
+
+.risk-status.good {
+  color: #4caf50;
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.risk-status.great {
+  color: var(--accent);
+  background: rgba(232, 255, 0, 0.08);
+  transition:
+    color var(--transition),
+    background var(--transition);
+}
+
+[data-mode="formal"] .risk-status.great {
+  background: rgba(201, 168, 76, 0.1);
 }
 
 /* ─── T&C ─── */
@@ -841,6 +927,11 @@ section {
   text-transform: uppercase;
 }
 
+.cta-btn .icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
 .cta-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 40px rgba(232, 255, 0, 0.25);
@@ -882,7 +973,7 @@ footer span {
   transition: color var(--transition);
 }
 
-/* ─── FIX 3: EASTER EGG ─── */
+/* ─── EASTER EGG ─── */
 #eggFlash {
   position: fixed;
   inset: 0;
@@ -989,7 +1080,6 @@ footer {
     margin-top: 1.25rem;
   }
 
-  /* Hero meta: reduce letter-spacing so it wraps cleanly */
   .hero-meta {
     font-size: 0.65rem;
     letter-spacing: 0.08em;
@@ -1002,6 +1092,11 @@ footer {
   }
 
   .section-title {
+    margin-bottom: 1.75rem;
+  }
+
+  .section-desc {
+    margin-top: -0.75rem;
     margin-bottom: 1.75rem;
   }
 
@@ -1044,11 +1139,22 @@ footer {
     padding: 1.5rem 1.25rem;
   }
 
-  /* Risk table: smaller cell padding */
-  .risk-table th,
-  .risk-table td {
-    padding: 0.65rem 0.75rem;
-    font-size: 0.82rem;
+  /* Risk list: compact on mobile */
+  .risk-item {
+    grid-template-columns: 2.5rem 1fr auto;
+    gap: 0.75rem;
+    padding: 1.1rem 0;
+  }
+
+  .risk-item-icon .icon {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  .risk-status {
+    font-size: 0.6rem;
+    padding: 0.25rem 0.5rem;
+    letter-spacing: 0.08em;
   }
 
   /* T&C: tighter grid and padding */

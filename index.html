@@ -16,17 +16,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- FIX 3: Easter egg elements are direct children of <body>, outside
-         the scroll container, so position:fixed is never clipped. -->
     <div id="eggFlash"></div>
     <div id="eggCrown">👑</div>
 
-    <!-- TOGGLE: position:fixed, works outside the scroll container -->
     <div id="toggle-bar">
       <span class="toggle-label" id="toggle-label-left">Meme</span>
       <label class="toggle-switch" title="Switch mode">
-        <!-- FIX 2: input uses position:absolute + opacity:0 instead of
-             display:none so it can receive change events -->
         <input type="checkbox" id="modeToggle" />
         <div class="toggle-track"></div>
         <div class="toggle-thumb"></div>
@@ -34,12 +29,13 @@
       <span class="toggle-label" id="toggle-label-right">Formal</span>
     </div>
 
-    <!-- FIX 1: All snap sections live inside this scroll container -->
     <div id="scroll-container">
       <!-- ── HERO ── -->
       <section id="hero">
         <div class="hero-eyebrow easter-target" id="easterEgg">
-          ⚠ Princess Eyes Only ⚠
+          <i data-lucide="triangle-alert" class="icon"></i>
+          Princess Eyes Only
+          <i data-lucide="triangle-alert" class="icon"></i>
         </div>
         <h1 class="hero-text fade-in">
           Dinner with
@@ -69,44 +65,48 @@
             <div class="trade-card left">
               <div class="trade-card-head" id="receiveLeft">I Receive:</div>
               <div class="trade-item">
-                <span class="trade-icon">🤝</span
-                ><span>Your company at dinner</span>
+                <i data-lucide="users" class="icon trade-icon"></i>
+                <span>Your company at dinner</span>
               </div>
               <div class="trade-item">
-                <span class="trade-icon">✨</span><span>Good vibes only</span>
+                <i data-lucide="sparkles" class="icon trade-icon"></i>
+                <span>Good vibes only</span>
               </div>
               <div class="trade-item">
-                <span class="trade-icon">🎯</span><span>A fair shot</span>
+                <i data-lucide="target" class="icon trade-icon"></i>
+                <span>A fair shot</span>
               </div>
               <div class="trade-item">
-                <span class="trade-icon">👑</span
-                ><span>The privilege of your presence, your majesty</span>
+                <i data-lucide="crown" class="icon trade-icon"></i>
+                <span>The privilege of your presence, your majesty</span>
               </div>
             </div>
             <div class="trade-center">
-              <div class="trade-vs" id="tradeVs">🤝</div>
+              <div class="trade-vs" id="tradeVs">
+                <i data-lucide="handshake" class="icon"></i>
+              </div>
             </div>
             <div class="trade-card right">
               <div class="trade-card-head" id="receiveRight">You Receive:</div>
               <div class="trade-item">
-                <span class="trade-icon clause-check">✅</span
-                ><span>Pick up from your location</span>
+                <i data-lucide="map-pin" class="icon trade-icon clause-check"></i>
+                <span>Pick up from your location</span>
               </div>
               <div class="trade-item">
-                <span class="trade-icon clause-check">✅</span
-                ><span>Dinner fully covered</span>
+                <i data-lucide="utensils" class="icon trade-icon clause-check"></i>
+                <span>Dinner fully covered</span>
               </div>
               <div class="trade-item">
-                <span class="trade-icon clause-check">✅</span
-                ><span>He shows up dressed</span>
+                <i data-lucide="user-check" class="icon trade-icon clause-check"></i>
+                <span>He shows up dressed</span>
               </div>
               <div class="trade-item">
-                <span class="trade-icon clause-check">✅</span
-                ><span>Shits and giggles, guaranteed</span>
+                <i data-lucide="laugh" class="icon trade-icon clause-check"></i>
+                <span>Shits and giggles, guaranteed</span>
               </div>
               <div class="trade-item">
-                <span class="trade-icon clause-check">✅</span
-                ><span>Safe ride home</span>
+                <i data-lucide="shield" class="icon trade-icon clause-check"></i>
+                <span>Safe ride home</span>
               </div>
             </div>
           </div>
@@ -117,6 +117,11 @@
       <section id="standard">
         <p class="section-label">Section 02</p>
         <h2 class="section-title">Princess Treatment Clause</h2>
+        <p class="section-desc">
+          A legally binding (in vibes) set of guarantees for the evening. Every
+          item below is non-negotiable, pre-approved, and effective from the
+          moment you say yes.
+        </p>
         <div class="clause-header">
           <span class="clause-tag">§ 1.0</span>
           <span class="clause-subtitle"
@@ -129,7 +134,7 @@
               <tr>
                 <td class="clause-num">1.1</td>
                 <td class="clause-name">
-                  <span class="clause-check">✅</span>Pick Up
+                  <i data-lucide="circle-check" class="icon clause-check"></i>Pick Up
                 </td>
                 <td class="clause-desc">
                   Vendor will collect client from a mutually agreed location. On
@@ -139,7 +144,7 @@
               <tr>
                 <td class="clause-num">1.2</td>
                 <td class="clause-name">
-                  <span class="clause-check">✅</span>Dinner Fully Covered
+                  <i data-lucide="circle-check" class="icon clause-check"></i>Dinner Fully Covered
                 </td>
                 <td class="clause-desc">
                   All food and beverage expenses borne by vendor. No exceptions.
@@ -148,7 +153,7 @@
               <tr>
                 <td class="clause-num">1.3</td>
                 <td class="clause-name">
-                  <span class="clause-check">✅</span>Dressed for the Occasion
+                  <i data-lucide="circle-check" class="icon clause-check"></i>Dressed for the Occasion
                 </td>
                 <td class="clause-desc">
                   Vendor shall present himself appropriately. Standards will be
@@ -158,7 +163,7 @@
               <tr>
                 <td class="clause-num">1.4</td>
                 <td class="clause-name">
-                  <span class="clause-check">✅</span>Shits &amp; Giggles
+                  <i data-lucide="circle-check" class="icon clause-check"></i>Shits &amp; Giggles
                 </td>
                 <td class="clause-desc">
                   Good conversation guaranteed. Awkward silence is a breach of
@@ -168,7 +173,7 @@
               <tr>
                 <td class="clause-num">1.5</td>
                 <td class="clause-name">
-                  <span class="clause-check">✅</span>Safe Return Home
+                  <i data-lucide="circle-check" class="icon clause-check"></i>Safe Return Home
                 </td>
                 <td class="clause-desc">
                   Client will be sent home safely at the end of the evening.
@@ -184,6 +189,11 @@
         <div class="inner">
           <p class="section-label">Section 03</p>
           <h2 class="section-title" id="premiumTitle">Premium Benefits</h2>
+          <p class="section-desc">
+            Perks beyond the standard package. These aren't promised upfront —
+            they're earned progressively as good vibes compound and cooperation
+            levels increase.
+          </p>
           <div class="clause-header">
             <span class="clause-tag">§ 2.0</span>
             <span class="clause-subtitle"
@@ -192,8 +202,10 @@
           </div>
           <div class="benefits-grid">
             <div class="benefit-card">
-              <div class="benefit-lock">🔒 Premium</div>
-              <span class="benefit-emoji">🎟️</span>
+              <div class="benefit-lock">
+                <i data-lucide="lock" class="icon"></i> Premium
+              </div>
+              <i data-lucide="ticket" class="icon benefit-icon"></i>
               <div class="benefit-title">Plus-One Privileges</div>
               <p class="benefit-desc">
                 Client granted priority access as vendor's plus-one to selected
@@ -202,8 +214,10 @@
               <p class="benefit-clause">§ 2.1 — Access Tier</p>
             </div>
             <div class="benefit-card">
-              <div class="benefit-lock">🔒 Premium</div>
-              <span class="benefit-emoji">🐷</span>
+              <div class="benefit-lock">
+                <i data-lucide="lock" class="icon"></i> Premium
+              </div>
+              <i data-lucide="heart" class="icon benefit-icon"></i>
               <div class="benefit-title">Piggyback Services</div>
               <p class="benefit-desc">
                 Upon verbal or non-verbal indication of fatigue, vendor shall
@@ -213,8 +227,10 @@
               <p class="benefit-clause">§ 2.2 — Logistics Tier</p>
             </div>
             <div class="benefit-card">
-              <div class="benefit-lock">🔒 Premium</div>
-              <span class="benefit-emoji">📸</span>
+              <div class="benefit-lock">
+                <i data-lucide="lock" class="icon"></i> Premium
+              </div>
+              <i data-lucide="camera" class="icon benefit-icon"></i>
               <div class="benefit-title">Designated Fit Photographer</div>
               <p class="benefit-desc">
                 On-demand photography services. Unlimited shots per session.
@@ -230,55 +246,75 @@
       <section id="risk">
         <p class="section-label">Section 04</p>
         <h2 class="section-title">Risk Assessment</h2>
-        <div class="risk-table-wrap">
-          <table class="risk-table">
-            <thead>
-              <tr>
-                <th>Risk Factor</th>
-                <th>Probability</th>
-                <th>Mitigation</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>You have a bad time</td>
-                <td>~0%</td>
-                <td>Vendor has planned accordingly</td>
-                <td class="risk-status-good">✅ Controlled</td>
-              </tr>
-              <tr>
-                <td>Awkward silence</td>
-                <td>Low</td>
-                <td>Good conversation + music exists</td>
-                <td class="risk-status-good">✅ Mitigated</td>
-              </tr>
-              <tr>
-                <td>Hidden agenda</td>
-                <td>None</td>
-                <td>Intentions stated upfront. On record.</td>
-                <td class="risk-status-good">✅ Cleared</td>
-              </tr>
-              <tr>
-                <td>Vendor ghosts after</td>
-                <td>Zero</td>
-                <td>Refer to "best regards, Sean Nicholas"</td>
-                <td class="risk-status-good">✅ Eliminated</td>
-              </tr>
-              <tr>
-                <td>You enjoy yourself</td>
-                <td>Very High</td>
-                <td>Expected outcome, not an accident</td>
-                <td class="risk-status-great">📈 Projected</td>
-              </tr>
-              <tr>
-                <td>You want to go again</td>
-                <td>High</td>
-                <td>Vendor is prepared for this</td>
-                <td class="risk-status-great">📈 On Track</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="risk-list">
+          <div class="risk-item">
+            <div class="risk-item-icon good">
+              <i data-lucide="shield-check" class="icon"></i>
+            </div>
+            <div class="risk-item-body">
+              <div class="risk-factor">You have a bad time</div>
+              <div class="risk-prob">~0% probability</div>
+              <div class="risk-mitigation">Vendor has planned accordingly</div>
+            </div>
+            <div class="risk-status good">Controlled</div>
+          </div>
+          <div class="risk-item">
+            <div class="risk-item-icon good">
+              <i data-lucide="shield-check" class="icon"></i>
+            </div>
+            <div class="risk-item-body">
+              <div class="risk-factor">Awkward silence</div>
+              <div class="risk-prob">Low probability</div>
+              <div class="risk-mitigation">Good conversation + music exists</div>
+            </div>
+            <div class="risk-status good">Mitigated</div>
+          </div>
+          <div class="risk-item">
+            <div class="risk-item-icon good">
+              <i data-lucide="shield-check" class="icon"></i>
+            </div>
+            <div class="risk-item-body">
+              <div class="risk-factor">Hidden agenda</div>
+              <div class="risk-prob">None</div>
+              <div class="risk-mitigation">Intentions stated upfront. On record.</div>
+            </div>
+            <div class="risk-status good">Cleared</div>
+          </div>
+          <div class="risk-item">
+            <div class="risk-item-icon good">
+              <i data-lucide="shield-check" class="icon"></i>
+            </div>
+            <div class="risk-item-body">
+              <div class="risk-factor">Vendor ghosts after</div>
+              <div class="risk-prob">Zero</div>
+              <div class="risk-mitigation">
+                Refer to "best regards, Sean Nicholas"
+              </div>
+            </div>
+            <div class="risk-status good">Eliminated</div>
+          </div>
+          <div class="risk-item">
+            <div class="risk-item-icon great">
+              <i data-lucide="trending-up" class="icon"></i>
+            </div>
+            <div class="risk-item-body">
+              <div class="risk-factor">You enjoy yourself</div>
+              <div class="risk-prob">Very high probability</div>
+              <div class="risk-mitigation">Expected outcome, not an accident</div>
+            </div>
+            <div class="risk-status great">Projected</div>
+          </div>
+          <div class="risk-item">
+            <div class="risk-item-icon great">
+              <i data-lucide="trending-up" class="icon"></i>
+            </div>
+            <div class="risk-item-body">
+              <div class="risk-factor">You want to go again</div>
+              <div class="risk-prob">High probability</div>
+              <div class="risk-mitigation">Vendor is prepared for this</div>
+            </div>
+            <div class="risk-status great">On Track</div>
+          </div>
         </div>
       </section>
 
@@ -347,7 +383,7 @@
           target="_blank"
           rel="noopener"
         >
-          <span>👑</span>
+          <i data-lucide="crown" class="icon"></i>
           <span id="ctaBtnText">I Approve This Proposal</span>
         </a>
         <p class="cta-note">
@@ -363,6 +399,7 @@
     </div>
     <!-- /#scroll-container -->
 
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

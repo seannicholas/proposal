@@ -58,3 +58,5 @@ eggEl.addEventListener("click", () => {
     eggCount = 0;
   }
 });
+
+lucide.createIcons();
