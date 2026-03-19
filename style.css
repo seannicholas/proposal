@@ -92,6 +92,7 @@ body {
 #premium,
 #risk,
 #tnc,
+#itinerary,
 #cta {
   scroll-snap-align: start;
   min-height: 100vh;
@@ -624,6 +625,20 @@ section {
   color: var(--text-muted);
 }
 
+.clause-amendment td {
+  background: rgba(255, 255, 255, 0.03);
+  font-style: italic;
+}
+
+[data-mode="formal"] .clause-amendment td {
+  background: rgba(201, 168, 76, 0.06);
+}
+
+.clause-amendment .clause-num {
+  color: var(--accent2);
+  transition: color var(--transition);
+}
+
 /* ─── PREMIUM BENEFITS ─── */
 #premium {
   background: var(--bg-alt);
@@ -636,12 +651,25 @@ section {
 }
 
 .benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 1.25rem;
+  padding-bottom: 1rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.benefits-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .benefit-card {
+  scroll-snap-align: start;
+  flex: 0 0 85%;
+  max-width: 360px;
   border: 1.5px solid var(--border);
   padding: 2rem 1.75rem;
   position: relative;
@@ -670,6 +698,13 @@ section {
   text-transform: uppercase;
   color: var(--text-muted);
   margin-bottom: 1.25rem;
+}
+
+.lock-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.3rem;
+  color: var(--text-muted);
 }
 
 .benefit-icon {
@@ -708,6 +743,110 @@ section {
   text-transform: uppercase;
   color: var(--border);
   margin-top: 1.25rem;
+}
+
+.swipe-hint {
+  text-align: center;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  transition: color var(--transition);
+}
+
+/* ─── CLAUSE ACCORDION ─── */
+.clause-accordion {
+  border-top: 1px solid var(--border);
+  transition: border-color var(--transition);
+}
+
+.clause-row {
+  border-bottom: 1px solid var(--border);
+  transition: border-color var(--transition);
+}
+
+.clause-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.1rem 0.25rem;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.clause-summary::-webkit-details-marker {
+  display: none;
+}
+
+.clause-summary:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+[data-mode="formal"] .clause-summary:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.clause-summary .clause-num {
+  flex-shrink: 0;
+  width: 3rem;
+}
+
+.clause-summary .clause-name {
+  flex: 1;
+  font-weight: 600;
+  font-size: clamp(0.88rem, 1.8vw, 1rem);
+  display: flex;
+  align-items: center;
+}
+
+[data-mode="formal"] .clause-summary .clause-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(0.95rem, 1.9vw, 1.1rem);
+}
+
+.clause-chevron {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  color: var(--text-muted);
+  transition:
+    transform 0.3s ease,
+    color var(--transition);
+}
+
+details[open] .clause-chevron {
+  transform: rotate(180deg);
+}
+
+.clause-body {
+  padding: 0 0.25rem 1.25rem 3.75rem;
+  font-size: clamp(0.88rem, 1.8vw, 1rem);
+  color: var(--text-muted);
+  line-height: 1.7;
+  transition: color var(--transition);
+}
+
+[data-mode="formal"] .clause-body {
+  font-family: "Cormorant Garamond", serif;
+}
+
+.clause-row.clause-amendment .clause-summary .clause-num {
+  color: var(--accent2);
+}
+
+.clause-row.clause-amendment .clause-summary {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+[data-mode="formal"] .clause-row.clause-amendment .clause-summary {
+  background: rgba(201, 168, 76, 0.04);
+}
+
+.clause-row.clause-amendment .clause-body {
+  font-style: italic;
 }
 
 /* ─── RISK ASSESSMENT (list layout) ─── */
@@ -798,6 +937,83 @@ section {
 
 [data-mode="formal"] .risk-status.great {
   background: rgba(201, 168, 76, 0.1);
+}
+
+/* ─── ITINERARY ─── */
+.itinerary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.it-item {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+  transition: border-color var(--transition);
+}
+
+.it-item:last-child {
+  border-bottom: none;
+}
+
+.it-time {
+  font-family: var(--font-head);
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-top: 0.2rem;
+  transition:
+    font-family var(--transition),
+    color var(--transition);
+}
+
+.it-title {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  transition: color var(--transition);
+}
+
+[data-mode="formal"] .it-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+}
+
+.it-desc {
+  font-size: clamp(0.88rem, 1.8vw, 1rem);
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 0.65rem;
+  transition: color var(--transition);
+}
+
+.it-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  transition:
+    border-color var(--transition),
+    color var(--transition);
+}
+
+.itinerary-note {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 2rem;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  transition: color var(--transition);
 }
 
 /* ─── T&C ─── */
@@ -1037,6 +1253,7 @@ footer span {
   #premium,
   #risk,
   #tnc,
+  #itinerary,
   #cta {
     min-height: 100dvh;
   }
@@ -1116,23 +1333,9 @@ footer {
     margin-bottom: 1rem;
   }
 
-  /* Clause table: 2-col on mobile — hide description to avoid squeezing */
-  .clause-desc {
-    display: none;
-  }
-
-  .clause-name {
-    width: auto;
-    min-width: 0;
-  }
-
-  .clause-table td {
-    padding: 0.75rem 0.5rem;
-  }
-
-  /* Benefits: force single column */
-  .benefits-grid {
-    grid-template-columns: 1fr;
+  /* Clause accordion: tighter on mobile */
+  .clause-body {
+    padding-left: 2.75rem;
   }
 
   .benefit-card {
