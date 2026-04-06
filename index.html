@@ -1,477 +1,228 @@
 <!doctype html>
-<html lang="en" data-mode="meme">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <title>Dinner Proposal — Sean Nicholas</title>
+    <title>Outing Proposal — Sean Nicholas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Permanent+Marker&family=DM+Sans:wght@400;600&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="eggFlash"></div>
-    <div id="eggCrown">👑</div>
-
-    <div id="toggle-bar">
-      <span class="toggle-label" id="toggle-label-left">Meme</span>
-      <label class="toggle-switch" title="Switch mode">
-        <input type="checkbox" id="modeToggle" />
-        <div class="toggle-track"></div>
-        <div class="toggle-thumb"></div>
-      </label>
-      <span class="toggle-label" id="toggle-label-right">Formal</span>
-    </div>
-
     <div id="scroll-container">
       <!-- ── HERO ── -->
       <section id="hero">
-        <div class="hero-eyebrow easter-target" id="easterEgg">
-          <i data-lucide="triangle-alert" class="icon"></i>
-          Princess Eyes Only
-          <i data-lucide="triangle-alert" class="icon"></i>
-        </div>
-        <h1 class="hero-text fade-in">
-          Dinner with
-          <span class="hero-accent-word">Sean Nicholas</span>
+        <p class="eyebrow">&#9888; For Your Eyes Only &#9888;</p>
+        <h1 class="hero-title">
+          Proposal<br /><span class="accent">for an Outing</span>
         </h1>
-        <div class="hero-divider fade-in"></div>
-        <p class="hero-sub fade-in" id="heroSub">
-          he said he'd send a proposal deck.<br />he actually built a whole
-          website.
-        </p>
-        <p class="hero-meta fade-in">
-          Prepared for <span>elliephantgator</span> &nbsp;·&nbsp; Version 1.0
-          &nbsp;·&nbsp; Classification: <span>Princess Eyes Only</span>
-        </p>
+        <div class="hero-divider"></div>
+        <p class="hero-sub">Two plans. You pick. No pressure.</p>
+        <p class="hero-meta">Prepared for <span>Ellie</span></p>
         <div class="scroll-cue">
           <span>Scroll</span>
           <div class="scroll-line"></div>
         </div>
       </section>
 
-      <!-- ── TRADE OFFER ── -->
-      <div id="trade">
-        <div class="inner">
-          <p class="section-label">Section 01</p>
-          <h2 class="section-title" id="tradeTitle">Trade Offer</h2>
-          <div class="trade-grid">
-            <div class="trade-card left">
-              <div class="trade-card-head" id="receiveLeft">I Receive:</div>
-              <div class="trade-item">
-                <i data-lucide="users" class="icon trade-icon"></i>
-                <span>Your company at dinner</span>
-              </div>
-              <div class="trade-item">
-                <i data-lucide="sparkles" class="icon trade-icon"></i>
-                <span>Good vibes only</span>
-              </div>
-              <div class="trade-item">
-                <i data-lucide="target" class="icon trade-icon"></i>
-                <span>A fair shot</span>
-              </div>
-              <div class="trade-item">
-                <i data-lucide="crown" class="icon trade-icon"></i>
-                <span>The privilege of your presence, your majesty</span>
-              </div>
-            </div>
-            <div class="trade-center">
-              <div class="trade-vs" id="tradeVs">
-                <i data-lucide="handshake" class="icon"></i>
-              </div>
-            </div>
-            <div class="trade-card right">
-              <div class="trade-card-head" id="receiveRight">You Receive:</div>
-              <div class="trade-item">
-                <i data-lucide="map-pin" class="icon trade-icon clause-check"></i>
-                <span>Pick up from your location</span>
-              </div>
-              <div class="trade-item">
-                <i data-lucide="utensils" class="icon trade-icon clause-check"></i>
-                <span>Dinner fully covered</span>
-              </div>
-              <div class="trade-item">
-                <i data-lucide="user-check" class="icon trade-icon clause-check"></i>
-                <span>He shows up dressed</span>
-              </div>
-              <div class="trade-item">
-                <i data-lucide="laugh" class="icon trade-icon clause-check"></i>
-                <span>Shits and giggles, guaranteed</span>
-              </div>
-              <div class="trade-item">
-                <i data-lucide="shield" class="icon trade-icon clause-check"></i>
-                <span>Safe ride home</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── PRINCESS TREATMENT CLAUSE ── -->
-      <section id="standard">
-        <p class="section-label">Section 02</p>
-        <h2 class="section-title">Princess Treatment Clause</h2>
-        <p class="section-desc">
-          A legally binding (in vibes) set of guarantees for the evening. Every
-          item below is non-negotiable, pre-approved, and effective from the
-          moment you say yes.
-        </p>
-        <div class="clause-header">
-          <span class="clause-tag">§ 1.0</span>
-          <span class="clause-subtitle"
-            >Standard Package — Effective Immediately</span
-          >
-        </div>
-        <div class="clause-accordion">
-          <details class="clause-row">
-            <summary class="clause-summary">
-              <span class="clause-num">1.1</span>
-              <span class="clause-name"><i data-lucide="circle-check" class="icon clause-check"></i>Pick Up</span>
-              <i data-lucide="chevron-down" class="icon clause-chevron"></i>
-            </summary>
-            <div class="clause-body">
-              Vendor will collect client from a mutually agreed location. On time.
-            </div>
-          </details>
-          <details class="clause-row clause-amendment">
-            <summary class="clause-summary">
-              <span class="clause-num">1.1a</span>
-              <span class="clause-name">⚡ Amendment</span>
-              <i data-lucide="chevron-down" class="icon clause-chevron"></i>
-            </summary>
-            <div class="clause-body">
-              Transport will be conducted via motorcycle. Helmet provided.
-              Client's safety is the vendor's full responsibility. If client is
-              not comfortable with this, alternative arrangements are
-              negotiable — but vendor will definitely be riding.
-            </div>
-          </details>
-          <details class="clause-row">
-            <summary class="clause-summary">
-              <span class="clause-num">1.2</span>
-              <span class="clause-name"><i data-lucide="circle-check" class="icon clause-check"></i>Dinner Fully Covered</span>
-              <i data-lucide="chevron-down" class="icon clause-chevron"></i>
-            </summary>
-            <div class="clause-body">
-              All food and beverage expenses borne by vendor. No exceptions.
-            </div>
-          </details>
-          <details class="clause-row">
-            <summary class="clause-summary">
-              <span class="clause-num">1.3</span>
-              <span class="clause-name"><i data-lucide="circle-check" class="icon clause-check"></i>Dressed for the Occasion</span>
-              <i data-lucide="chevron-down" class="icon clause-chevron"></i>
-            </summary>
-            <div class="clause-body">
-              Vendor shall present himself appropriately. Standards will be upheld.
-            </div>
-          </details>
-          <details class="clause-row">
-            <summary class="clause-summary">
-              <span class="clause-num">1.4</span>
-              <span class="clause-name"><i data-lucide="circle-check" class="icon clause-check"></i>Shits &amp; Giggles</span>
-              <i data-lucide="chevron-down" class="icon clause-chevron"></i>
-            </summary>
-            <div class="clause-body">
-              Good conversation guaranteed. Awkward silence is a breach of contract.
-            </div>
-          </details>
-          <details class="clause-row">
-            <summary class="clause-summary">
-              <span class="clause-num">1.5</span>
-              <span class="clause-name"><i data-lucide="circle-check" class="icon clause-check"></i>Safe Return Home</span>
-              <i data-lucide="chevron-down" class="icon clause-chevron"></i>
-            </summary>
-            <div class="clause-body">
-              Client will be sent home safely at the end of the evening.
-            </div>
-          </details>
-        </div>
-      </section>
-
-      <!-- ── PREMIUM BENEFITS ── -->
-      <div id="premium">
-        <div class="inner">
-          <p class="section-label">Section 03</p>
-          <h2 class="section-title" id="premiumTitle">Premium Benefits</h2>
-          <p class="section-desc">
-            Perks beyond the standard package. These aren't promised upfront —
-            they're earned progressively as good vibes compound and cooperation
-            levels increase.
+      <!-- ── PLANS ── -->
+      <div id="plans">
+        <div class="plans-inner">
+          <p class="section-label">The Options</p>
+          <h2 class="section-title">Pick Your Plan</h2>
+          <p class="plans-desc">Two different locations, same structure.</p>
+          <p class="plans-desc">
+            Have a look at both and let me know which works for you.
           </p>
-          <div class="clause-header">
-            <span class="clause-tag">§ 2.0</span>
-            <span class="clause-subtitle"
-              >Unlocked Over Time — Based on Cooperation &amp; Good Vibes</span
-            >
-          </div>
-          <div class="benefits-grid">
-            <div class="benefit-card">
-              <div class="benefit-lock">
-                <svg class="lock-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                Premium
-              </div>
-              <i data-lucide="ticket" class="icon benefit-icon"></i>
-              <div class="benefit-title">Plus-One Privileges</div>
-              <p class="benefit-desc">
-                Client granted priority access as vendor's plus-one to selected
-                events, dinners, and occasions. Client will not go alone.
-              </p>
-              <p class="benefit-clause">§ 2.1 — Access Tier</p>
-            </div>
-            <div class="benefit-card">
-              <div class="benefit-lock">
-                <svg class="lock-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                Premium
-              </div>
-              <i data-lucide="heart" class="icon benefit-icon"></i>
-              <div class="benefit-title">Piggyback Services</div>
-              <p class="benefit-desc">
-                Upon verbal or non-verbal indication of fatigue, vendor shall
-                provide carry services. Session ends only upon client's
-                satisfaction.
-              </p>
-              <p class="benefit-clause">§ 2.2 — Logistics Tier</p>
-            </div>
-            <div class="benefit-card">
-              <div class="benefit-lock">
-                <svg class="lock-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                Premium
-              </div>
-              <i data-lucide="camera" class="icon benefit-icon"></i>
-              <div class="benefit-title">Designated Fit Photographer</div>
-              <p class="benefit-desc">
-                On-demand photography services. Unlimited shots per session.
-                Session concludes only upon client's formal approval.
-              </p>
-              <p class="benefit-clause">§ 2.3 — Creative Tier</p>
-            </div>
-          </div>
-          <p class="swipe-hint">← Swipe to explore →</p>
-        </div>
-      </div>
 
-      <!-- ── RISK ASSESSMENT ── -->
-      <section id="risk">
-        <p class="section-label">Section 04</p>
-        <h2 class="section-title">Risk Assessment</h2>
-        <div class="risk-list">
-          <div class="risk-item">
-            <div class="risk-item-icon good">
-              <i data-lucide="shield-check" class="icon"></i>
-            </div>
-            <div class="risk-item-body">
-              <div class="risk-factor">You have a bad time</div>
-              <div class="risk-prob">~0% probability</div>
-              <div class="risk-mitigation">Vendor has planned accordingly</div>
-            </div>
-            <div class="risk-status good">Controlled</div>
+          <div class="tab-bar">
+            <button class="tab-btn active" data-tab="a">Plan A</button>
+            <button class="tab-btn" data-tab="b">Plan B</button>
           </div>
-          <div class="risk-item">
-            <div class="risk-item-icon good">
-              <i data-lucide="shield-check" class="icon"></i>
-            </div>
-            <div class="risk-item-body">
-              <div class="risk-factor">Awkward silence</div>
-              <div class="risk-prob">Low probability</div>
-              <div class="risk-mitigation">Good conversation + music exists</div>
-            </div>
-            <div class="risk-status good">Mitigated</div>
-          </div>
-          <div class="risk-item">
-            <div class="risk-item-icon good">
-              <i data-lucide="shield-check" class="icon"></i>
-            </div>
-            <div class="risk-item-body">
-              <div class="risk-factor">Hidden agenda</div>
-              <div class="risk-prob">None</div>
-              <div class="risk-mitigation">Intentions stated upfront. On record.</div>
-            </div>
-            <div class="risk-status good">Cleared</div>
-          </div>
-          <div class="risk-item">
-            <div class="risk-item-icon good">
-              <i data-lucide="shield-check" class="icon"></i>
-            </div>
-            <div class="risk-item-body">
-              <div class="risk-factor">Vendor ghosts after</div>
-              <div class="risk-prob">Zero</div>
-              <div class="risk-mitigation">
-                Refer to "best regards, Sean Nicholas"
+
+          <!-- PLAN A -->
+          <div class="plan" id="plan-a">
+            <div class="timeline">
+              <div class="tl-stop">
+                <div class="tl-left">
+                  <div class="tl-circle"></div>
+                  <div class="tl-line"></div>
+                </div>
+                <div class="tl-content">
+                  <div class="tl-time">5:00 PM</div>
+                  <div class="tl-title">Pickup</div>
+                  <div class="tl-desc">
+                    Vendor arrives at client's location. On time, helmet
+                    provided. Transport: motorcycle.
+                  </div>
+                </div>
+              </div>
+
+              <div class="tl-stop">
+                <div class="tl-left">
+                  <div class="tl-circle"></div>
+                  <div class="tl-line"></div>
+                </div>
+                <div class="tl-content">
+                  <div class="tl-time">6:00 PM</div>
+                  <div class="tl-title">Dinner — The Cavern</div>
+                  <div class="tl-desc">
+                    Dinner is on the vendor. Good food, no agenda. Just eat and
+                    see how the night goes.
+                  </div>
+                  <div class="tl-address">
+                    20 Mandai Lake Rd, #02-32 Rainforest Wild ASIA, Singapore
+                    729825
+                  </div>
+                </div>
+              </div>
+
+              <div class="tl-stop">
+                <div class="tl-left">
+                  <div class="tl-circle tl-circle--optional"></div>
+                  <div class="tl-line"></div>
+                </div>
+                <div class="tl-content">
+                  <div class="tl-time">
+                    After <span class="tl-optional-tag">Optional</span>
+                  </div>
+                  <div class="tl-title">Dessert — Hundred Acre Creamery</div>
+                  <div class="tl-desc">
+                    Crafted gelato, waffles & desserts. If the vibes are good,
+                    we end it here.
+                  </div>
+                  <div class="tl-address">
+                    109 Clementi Street 11, #01-37, Singapore 120109
+                  </div>
+                </div>
+              </div>
+
+              <div class="tl-stop tl-stop--last">
+                <div class="tl-left">
+                  <div class="tl-circle"></div>
+                </div>
+                <div class="tl-content">
+                  <div class="tl-time">9–10 PM</div>
+                  <div class="tl-title">Send Home</div>
+                  <div class="tl-desc">
+                    Vendor sends client home safely. End of evening.
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="risk-status good">Eliminated</div>
           </div>
-          <div class="risk-item">
-            <div class="risk-item-icon great">
-              <i data-lucide="trending-up" class="icon"></i>
-            </div>
-            <div class="risk-item-body">
-              <div class="risk-factor">You enjoy yourself</div>
-              <div class="risk-prob">Very high probability</div>
-              <div class="risk-mitigation">Expected outcome, not an accident</div>
-            </div>
-            <div class="risk-status great">Projected</div>
-          </div>
-          <div class="risk-item">
-            <div class="risk-item-icon great">
-              <i data-lucide="trending-up" class="icon"></i>
-            </div>
-            <div class="risk-item-body">
-              <div class="risk-factor">You want to go again</div>
-              <div class="risk-prob">High probability</div>
-              <div class="risk-mitigation">Vendor is prepared for this</div>
-            </div>
-            <div class="risk-status great">On Track</div>
-          </div>
-        </div>
-      </section>
 
-      <!-- ── TERMS & CONDITIONS ── -->
-      <div id="tnc">
-        <div class="inner">
-          <p class="section-label">Section 05</p>
-          <h2 class="section-title">Terms &amp; Conditions</h2>
-          <div class="tnc-list">
-            <div class="tnc-item">
-              <span class="tnc-num">T1</span>
-              <span class="tnc-text"
-                >This proposal is valid indefinitely. There is no expiry on
-                being treated well.</span
-              >
-            </div>
-            <div class="tnc-item">
-              <span class="tnc-num">T2</span>
-              <span class="tnc-text"
-                >All standard package deliverables are non-negotiable. Premium
-                benefits are earned progressively.</span
-              >
-            </div>
-            <div class="tnc-item">
-              <span class="tnc-num">T3</span>
-              <span class="tnc-text"
-                >Vendor reserves the right to be himself. Client should expect
-                authenticity, not performance.</span
-              >
-            </div>
-            <div class="tnc-item">
-              <span class="tnc-num">T4</span>
-              <span class="tnc-text"
-                >Proposal is non-transferable. This offer is exclusive to
-                elliephantgator.</span
-              >
-            </div>
-            <div class="tnc-item">
-              <span class="tnc-num">T5</span>
-              <span class="tnc-text"
-                >No formal reply template required. A simple "yes" will suffice
-                and be accepted with enthusiasm.</span
-              >
-            </div>
-            <div class="tnc-item">
-              <span class="tnc-num">T6</span>
-              <span class="tnc-text"
-                >Governing principle: good vibes only. All engagements to be
-                conducted in the spirit of mutual respect.</span
-              >
+          <!-- PLAN B -->
+          <div class="plan hidden" id="plan-b">
+            <div class="timeline">
+              <div class="tl-stop">
+                <div class="tl-left">
+                  <div class="tl-circle"></div>
+                  <div class="tl-line"></div>
+                </div>
+                <div class="tl-content">
+                  <div class="tl-time">5:00 PM</div>
+                  <div class="tl-title">Pickup</div>
+                  <div class="tl-desc">
+                    Same as Plan A. Vendor arrives on time, helmet provided.
+                    Transport: motorcycle.
+                  </div>
+                </div>
+              </div>
+
+              <div class="tl-stop">
+                <div class="tl-left">
+                  <div class="tl-circle"></div>
+                  <div class="tl-line"></div>
+                </div>
+                <div class="tl-content">
+                  <div class="tl-time">6:00 PM</div>
+                  <div class="tl-title">Dinner — Jypsy</div>
+                  <div class="tl-desc">
+                    Contemporary Japanese with a sea view. Dinner covered. East
+                    Coast Park, good air, no agenda.
+                  </div>
+                  <div class="tl-address">
+                    920 East Coast Pkwy, #01-25/26/27, Singapore 449875
+                  </div>
+                </div>
+              </div>
+
+              <div class="tl-stop">
+                <div class="tl-left">
+                  <div class="tl-circle tl-circle--optional"></div>
+                  <div class="tl-line"></div>
+                </div>
+                <div class="tl-content">
+                  <div class="tl-time">
+                    After <span class="tl-optional-tag">Optional</span>
+                  </div>
+                  <div class="tl-title">Dessert — Wan Mei</div>
+                  <div class="tl-desc">
+                    If the vibes are still good, we stay on the east side and
+                    finish with dessert here.
+                  </div>
+                  <div class="tl-address">
+                    11 E Coast Rd, #01-14 The Odeon, Singapore 428722
+                  </div>
+                </div>
+              </div>
+
+              <div class="tl-stop tl-stop--last">
+                <div class="tl-left">
+                  <div class="tl-circle"></div>
+                </div>
+                <div class="tl-content">
+                  <div class="tl-time">9–10 PM</div>
+                  <div class="tl-title">Send Home</div>
+                  <div class="tl-desc">
+                    Vendor sends client home safely. End of evening.
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- ── ITINERARY ── -->
-      <section id="itinerary">
-        <p class="section-label">Section 06</p>
-        <h2 class="section-title">Proposed Itinerary</h2>
-        <div class="clause-header">
-          <span class="clause-tag">28 March</span>
-          <span class="clause-subtitle"
-            >Subject to client's approval — amendments welcome</span
-          >
-        </div>
-
-        <div class="itinerary-list">
-          <div class="it-item">
-            <div class="it-time">Evening</div>
-            <div class="it-content">
-              <div class="it-title">Mad Roasters Slow Bar</div>
-              <div class="it-desc">
-                There's an event on that night. Good food, good atmosphere, low
-                stress. We go, we eat, we see how the night feels.
-              </div>
-              <div class="it-tag">Dinner · Event Night</div>
-            </div>
-          </div>
-
-          <div class="it-item">
-            <div class="it-time">After</div>
-            <div class="it-content">
-              <div class="it-title">Creamier, Tiong Bahru</div>
-              <div class="it-desc">
-                If the night still has legs, we make our way from Mad Roasters
-                to Creamier in Tiong Bahru. Ice cream, good air, no agenda.
-                Client may propose alternatives if she has strong feelings about
-                this.
-              </div>
-              <div class="it-tag">Dessert · Tiong Bahru</div>
-            </div>
-          </div>
-
-          <div class="it-item">
-            <div class="it-time">Drinks</div>
-            <div class="it-content">
-              <div class="it-title">Subject to Client's Preference</div>
-              <div class="it-desc">
-                Entirely optional. No pressure either way — vendor is equally
-                happy with coffee, juice, or nothing at all. Just let him know.
-              </div>
-              <div class="it-tag">Optional · Client's Call</div>
-            </div>
-          </div>
-        </div>
-
-        <p class="itinerary-note">
-          * Full itinerary subject to revision upon client's feedback. This is a
-          proposal, not a summons.
-        </p>
-      </section>
 
       <!-- ── CTA ── -->
       <section id="cta">
-        <p class="section-label">Final Clause</p>
-        <h2 class="cta-head" id="ctaHead">So…<br />do we have a deal?</h2>
-        <p class="cta-sub" id="ctaSub">
-          Awaiting your formal approval, your majesty.
-        </p>
-        <a
-          class="cta-btn"
-          href="https://t.me/seannicho"
-          target="_blank"
-          rel="noopener"
-        >
-          <i data-lucide="crown" class="icon"></i>
-          <span id="ctaBtnText">I Approve This Proposal</span>
-        </a>
-        <p class="cta-note">
-          Reply options: <span>yes</span> &nbsp;|&nbsp; <span>also yes</span>
-        </p>
+        <p class="section-label">Final Step</p>
+        <h2 class="cta-head">Which plan<br />works for you?</h2>
+        <p class="cta-sub">Pick a date and a plan — opens Telegram with your answer ready to send.</p>
+
+        <div class="cta-dates">
+          <p class="cta-dates-label">When works for you?</p>
+          <div class="cta-date-row">
+            <button class="date-btn" data-date="12 May">12 May</button>
+            <button class="date-btn" data-date="13 May">13 May</button>
+            <button class="date-btn" data-date="14 May">14 May</button>
+          </div>
+        </div>
+
+        <div class="cta-options">
+          <div class="cta-primary-row">
+            <a class="cta-opt cta-opt--primary" data-msg="Plan A" href="https://t.me/seannicho?text=Plan%20A" target="_blank" rel="noopener">Plan A</a>
+            <a class="cta-opt cta-opt--primary" data-msg="Plan B" href="https://t.me/seannicho?text=Plan%20B" target="_blank" rel="noopener">Plan B</a>
+          </div>
+          <p class="cta-hint">Pick a date above first</p>
+          <a class="cta-opt cta-opt--outline" href="https://t.me/seannicho?text=Neither" target="_blank" rel="noopener">Neither</a>
+          <a class="cta-opt cta-opt--ghost" href="https://t.me/seannicho?text=Counter%20proposal%3A%20" target="_blank" rel="noopener">Counter proposal &rarr;</a>
+        </div>
       </section>
 
       <!-- ── FOOTER ── -->
-      <footer>
-        <span>best regards, Sean Nicholas</span> &nbsp;·&nbsp; seansidequests
-        &nbsp;·&nbsp; <span>Princess Eyes Only</span>
-      </footer>
+      <footer>Created by: <span>Sean Nicholas</span></footer>
     </div>
     <!-- /#scroll-container -->
 
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,62 +1,57 @@
-const html = document.documentElement;
-const toggle = document.getElementById("modeToggle");
-const heroSub = document.getElementById("heroSub");
-const ctaHead = document.getElementById("ctaHead");
-const ctaSub = document.getElementById("ctaSub");
-const ctaBtn = document.getElementById("ctaBtnText");
-const eggEl = document.getElementById("easterEgg");
-const eggFlash = document.getElementById("eggFlash");
-const eggCrown = document.getElementById("eggCrown");
+const tabBtns         = document.querySelectorAll('.tab-btn');
+const plans           = document.querySelectorAll('.plan');
+const scrollContainer = document.getElementById('scroll-container');
+const dateBtns        = document.querySelectorAll('.date-btn');
+const planLinks       = document.querySelectorAll('.cta-opt[data-msg]');
+const ctaSection      = document.getElementById('cta');
+const ctaDates        = document.querySelector('.cta-dates');
 
-const MEME_COPY = {
-  heroSub:
-    "he said he'd send a proposal deck.<br/>he actually built a whole website.",
-  ctaHead: "So\u2026<br/>do we have a deal?",
-  ctaSub: "Awaiting your formal approval, your majesty.",
-  ctaBtn: "I Approve This Proposal",
-};
+// Set initial palette
+scrollContainer.dataset.plan = 'a';
 
-const FORMAL_COPY = {
-  heroSub: "Prepared exclusively for the consideration of<br/>elliephantgator.",
-  ctaHead: "Awaiting Your<br/>Formal Approval",
-  ctaSub: "Please direct all responses and approvals via the button below.",
-  ctaBtn: "Approve \u2192",
-};
-
-function setMode(isFormal) {
-  html.dataset.mode = isFormal ? "formal" : "meme";
-  const copy = isFormal ? FORMAL_COPY : MEME_COPY;
-  heroSub.innerHTML = copy.heroSub;
-  ctaHead.innerHTML = copy.ctaHead;
-  ctaSub.textContent = copy.ctaSub;
-  ctaBtn.textContent = copy.ctaBtn;
-}
-
-// FIX 2: toggle fires correctly now that input is not display:none
-toggle.addEventListener("change", () => setMode(toggle.checked));
-
-// FIX 3: Easter egg — eggFlash/eggCrown are direct children of <body>,
-// outside any scroll container, so position:fixed works correctly.
-let eggCount = 0;
-eggEl.addEventListener("click", () => {
-  eggCount++;
-  eggFlash.classList.add("pop");
-  eggCrown.classList.add("pop");
-  setTimeout(
-    () => {
-      eggFlash.classList.remove("pop");
-      eggCrown.classList.remove("pop");
-    },
-    eggCount > 4 ? 2000 : 600,
-  );
-  if (eggCount > 4) {
-    document.body.style.transition = "filter 0.3s";
-    document.body.style.filter = "hue-rotate(180deg)";
-    setTimeout(() => {
-      document.body.style.filter = "";
-    }, 1800);
-    eggCount = 0;
-  }
+// Plan tab switching
+tabBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    tabBtns.forEach(b => b.classList.remove('active'));
+    plans.forEach(p => p.classList.add('hidden'));
+    btn.classList.add('active');
+    document.getElementById('plan-' + btn.dataset.tab).classList.remove('hidden');
+    scrollContainer.dataset.plan = btn.dataset.tab;
+  });
 });
 
-lucide.createIcons();
+// Date selection — toggle, update hrefs, manage date-ready state
+let selectedDate = null;
+
+function updatePlanLinks() {
+  planLinks.forEach(link => {
+    const msg = selectedDate
+      ? `${link.dataset.msg} — ${selectedDate}`
+      : link.dataset.msg;
+    link.href = `https://t.me/seannicho?text=${encodeURIComponent(msg)}`;
+  });
+  ctaSection.classList.toggle('date-ready', !!selectedDate);
+}
+
+dateBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const isActive = btn.classList.contains('active');
+    dateBtns.forEach(b => b.classList.remove('active'));
+    selectedDate = isActive ? null : btn.dataset.date;
+    if (!isActive) btn.classList.add('active');
+    updatePlanLinks();
+  });
+});
+
+// Nudge the date row if Plan A/B clicked without a date
+planLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    if (!selectedDate) {
+      e.preventDefault();
+      ctaDates.classList.remove('nudge');
+      void ctaDates.offsetWidth; // reflow to restart animation
+      ctaDates.classList.add('nudge');
+      ctaDates.addEventListener('animationend', () => ctaDates.classList.remove('nudge'), { once: true });
+    }
+  });
+});
